@@ -1,0 +1,49 @@
+import React from "react";
+import PropTypes from "prop-types";
+import createMarkup from "helpers/createMarkup";
+import "./sharestories.css";
+
+function SharedStoryPreview(props) {
+  const sharedStory = props.data;
+
+  createMarkup = () => {
+    return { __html: sharedStory.story };
+  };
+
+  return (
+    <div>
+      Shared Story Preview
+      <div className="card overflow-hidden mx-auto">
+        <div className="card-img-top">
+          {" "}
+          <img
+            className="img-fluid rounded share-story-preview"
+            src={
+              "https://trello.com/1/cards/63f55215ac3814bd7bf15df0/attachments/63f55215ac3814bd7bf15e8e/download/Makai_Rentals_Logo_Blue_No_Background.png"
+            }
+            alt="sharedStory Image"
+          />
+        </div>
+        <div className="card-body">
+          <p className="card-text">Email: {sharedStory.email}</p>
+          <p className="card-text">Title: {sharedStory.name}</p>
+
+          <p> Story:</p>
+          <div
+            dangerouslySetInnerHTML={createMarkup()}
+            className="editor"
+          ></div>
+        </div>
+      </div>{" "}
+    </div>
+  );
+}
+
+SharedStoryPreview.propTypes = {
+  data: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    story: PropTypes.string.isRequired,
+    email: PropTypes.string,
+  }),
+};
+export default React.memo(SharedStoryPreview);
