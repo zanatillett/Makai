@@ -1,1 +1,1 @@
-# Makai
+Makai Rentals, a start-up focused on beach equipment rentals. Makai Rentals gives customers the means to easily rent beach gear and owners to effortlessly manage their locations and equipment online or using a mobile app. Makai Rentals is an MVP and due to the proprietary nature of the code I can only provide code snippets of my code. This repository contains React code for the attendance feature.
